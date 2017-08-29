@@ -688,6 +688,8 @@
                 document.querySelector("body").addEventListener("click", this.clickHandler.bind(this));
             },
             clickHandler: function(e) {
+                if(!this.shadowRoot.querySelector("#moreBtn")) return;
+                
                 if(e.target.classList.contains('paper-dropdown-menu')) {
                     this.shadowRoot.querySelector("#moreBtn").classList.add('active');
                     // document.querySelector('#moreBtn').classList.add('active');
