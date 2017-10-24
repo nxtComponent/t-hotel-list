@@ -708,7 +708,13 @@ Custom property | Description | Default
 
                 // Filter data && sort based on selection
                 this.debounce('filter', function () {
-                    self._reflectSortedView();
+                    let attr = null;
+                    let type = null;
+                    if(this.sortDetails){
+                        attr = this.sortDetails.attr; 
+                        type = this.sortDetails.type;
+                    }
+                    self._reflectSortedView(attr,type);
                     this.filterTags = filterTags;
                 }, 300);
             },
